@@ -96,7 +96,7 @@ public class ValidateAllLinkPageProcess implements PageProcessor, IValidateImage
 //                proxy
 //        ));
 
-        int threads = 20;
+        int threads = 5;
         Spider spider = Spider.create(this);
         for (ProductModel productModel: productList) {
             id = productModel.getId();
@@ -124,6 +124,12 @@ public class ValidateAllLinkPageProcess implements PageProcessor, IValidateImage
         spider.setDownloader(httpClientDownloader);
         spider.setScheduler(scheduler);
         spider.run();
+        spider.close();
+        // spider = null;
+
+        spider.close();
+        spider = null;
+        System.gc();
     }
 
     private boolean isUrlNotNull(String url) {
@@ -131,9 +137,16 @@ public class ValidateAllLinkPageProcess implements PageProcessor, IValidateImage
     }
 
     public static void main(String[] args) {
-        Spider.create(new ValidateAllLinkPageProcess())
+        ValidateHttpClientDownloader downloader = new ValidateHttpClientDownloader();
+        Spider spider = Spider.create(new ValidateAllLinkPageProcess())
+                .setDownloader(downloader)
                 .addUrl("https://cdn.shopify.com/s/files/1/0556/5258/1514/products/firming-breast-lotion-715130.jpg?v=1638355441")
                 .addPipeline(new ConsolePipeline())
-                .thread(1).run();
+                ;
+        spider.thread(1).run();
+        spider.close();
+        spider = null;
+        System.gc();
+        System.out.println("执行end");
     }
 }
