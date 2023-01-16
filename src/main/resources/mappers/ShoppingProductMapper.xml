@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hiido.shop.scawelshop.mapper.ShoppingProductMapper">
+
+    <sql id="all_fields">ad_id,
+pid,
+additional_image_link,
+adult,
+advertiser_country,
+advertiser_id,
+advertiser_name,
+age_group,
+availability,
+availability_date,
+brand,
+catalog_id,
+color,
+`condition`,
+custom_label0,
+custom_label1,
+custom_label2,
+custom_label3,
+custom_label4,
+description,
+energy_efficiency_class,
+energy_efficiency_class_max,
+energy_efficiency_class_min,
+expiration_date,
+gender,
+google_product_category,
+gtin,
+identifier_exists,
+image_link,
+installment,
+is_bundle,
+is_deleted,
+item_group_id,
+item_list_id,
+item_list_name,
+last_updated,
+link,
+link_code,
+loyalty_points,
+material,
+maximum_handling_time,
+minimum_handling_time,
+mobile_link,
+mpn,
+multipack,
+pattern,
+price,
+product_type,
+sale_price,
+sale_price_effective_date_end,
+sale_price_effective_date_start,
+serviceable_areas,
+shipping,
+`size`,
+size_system,
+size_type,
+source_feed_type,
+target_country,
+tax,
+title,
+unit_pricing_base_measure,
+unit_pricing_measure</sql>
+    
+    <insert id="saveBatchByNative">
+        INSERT INTO `affiliate_cj_shop_product_v1`(<include refid="all_fields"></include>) VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.adId},#{item.pid},#{item.additionalImageLink},#{item.adult},#{item.advertiserCountry},#{item.advertiserId},#{item.advertiserName},#{item.ageGroup},#{item.availability},#{item.availabilityDate},#{item.brand},#{item.catalogId},#{item.color},#{item.condition},#{item.customLabel0},#{item.customLabel1},#{item.customLabel2},#{item.customLabel3},#{item.customLabel4},#{item.description},#{item.energyEfficiencyClass},#{item.energyEfficiencyClassMax},#{item.energyEfficiencyClassMin},#{item.expirationDate},#{item.gender},#{item.googleProductCategory},#{item.gtin},#{item.identifierExists},#{item.imageLink},#{item.installment},#{item.isBundle},#{item.isDeleted},#{item.itemGroupId},#{item.itemListId},#{item.itemListName},#{item.lastUpdated},#{item.link},#{item.linkCode},#{item.loyaltyPoints},#{item.material},#{item.maximumHandlingTime},#{item.minimumHandlingTime},#{item.mobileLink},#{item.mpn},#{item.multipack},#{item.pattern},#{item.price},#{item.productType},#{item.salePrice},#{item.salePriceEffectiveDateEnd},#{item.salePriceEffectiveDateStart},#{item.serviceableAreas},#{item.shipping},#{item.size},#{item.sizeSystem},#{item.sizeType},#{item.sourceFeedType},#{item.targetCountry},#{item.tax},#{item.title},#{item.unitPricingBaseMeasure},#{item.unitPricingMeasure})
+        </foreach>
+    </insert>
+
+</mapper>

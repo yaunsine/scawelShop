@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hiido.shop.scawelshop.mapper.AdvertiserMapper">
+
+    <select id="listAdvertisers" resultType="com.hiido.shop.scawelshop.bo.AdvertiserBO">
+        select <include refid="all_advertisers_field"></include>
+            from affiliate_cj_advertiser
+    </select>
+
+    <select id="listAdvertiserIds" resultType="Integer">
+        select advertiser_id as advertiserId from affiliate_cj_advertiser
+    </select>
+
+    <sql id="all_advertisers_field">
+        advertiser_id as advertiserId,account_status as accountStatus,seven_day_epc as sevenDayEpc,
+        three_month_epc as threeMonthEpc,`language`,advertiser_name as advertiserName,
+        program_url as programUrl,relationship_status as relationshipStatus,mobile_tracking_certified as mobileTrackingCertified,
+            cookieless_tracking_certified as cookielessTrackingCertified,network_rank as networkRank
+        ,primary_category_parent as primaryCategoryParent
+        ,primary_category_child as primaryCategoryChild
+        ,performance_incentives as performanceIncentives
+        ,actions
+        ,link_types as linkTypes
+    </sql>
+    
+    <insert id="saveBatchByNative">
+        INSERT INTO `affiliate_cj_advertiser`(advertiser_id,account_status,seven_day_epc,
+        three_month_epc,`language`,advertiser_name,
+        program_url,relationship_status,mobile_tracking_certified,cookieless_tracking_certified,network_rank
+        ,primary_category_parent
+        ,primary_category_child
+        ,performance_incentives
+        ,actions
+        ,link_types
+        ) VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.advertiserId},#{item.accountStatus},#{item.sevenDayEpc}, #{item.threeMonthEpc}, #{item.language},
+            #{item.advertiserName},#{item.programUrl}, #{item.relationshipStatus}, #{item.mobileTrackingCertified},
+            #{item.cookielessTrackingCertified},#{item.networkRank},
+            #{item.primaryCategoryParent}, #{item.primaryCategoryChild},
+            #{item.performanceIncentives}, #{item.actions}, #{item.linkTypes}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

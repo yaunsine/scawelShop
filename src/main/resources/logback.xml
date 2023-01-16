@@ -1,0 +1,42 @@
+<configuration debug="false">
+    <logger name="org.apache" level="ERROR" />
+    <logger name="org.apache.http.wire" level="ERROR" />
+    <logger name="org.apache.http.headers" level="ERROR" />
+    
+    <property name="log.name" value="scrapy"/>
+    <property name="log.path" value="E:/code/java/scawelShop/log"/>
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%date{yyyy-MM-dd HH:mm:ss}  %highlight(%-5level) %magenta(%-4relative) --- [%yellow(%30.30thread)] %cyan(%-40.40logger{39}) : %msg%n"/>
+
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <!--定义项目中日志输出位置: 文件存储-->
+    <appender name="logFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/${log.name}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/${log.name}.%d{yyyy-MM-dd HH}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%30.30thread] %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 异步保存记录的日志文件，提升logback的性能 -->
+    <appender name="ASYNC_LOG" class="ch.qos.logback.classic.AsyncAppender">
+        <discardingThreshold>0</discardingThreshold>
+        <queueSize>256</queueSize>
+        <appender-ref ref="logFile"/>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+<!--        <appender-ref ref="ASYNC_LOG" />-->
+         <appender-ref ref="logFile"/>
+    </root>
+</configuration>

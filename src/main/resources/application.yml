@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.57.101.3:3306/mongoshop?serverTimezone=GMT%2B8&useSSL=true
+    username: developer
+    password: joyy@2022
+    hikari:
+      maximum-pool-size: 600
+      minimum-idle: 5
+      connection-timeout: 2000
+      idle-timeout: 600000
+      auto-commit: true
+      max-lifetime: 18000000
+      validation-timeout: 1000
+      pool-name: mypool
+  aop:
+    proxy-target-class: true
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8910
+
+
+my:
+  proxy:
+    host:
+      218.89.51.167
+    port:
+      9091
+
+log:
+  path:
+    E:\code\java\scawelShop\log
+  name:
+    scrapy
+
+mybatis:
+  mapper-locations: classpath:/mappers/*.xml # 扫描mybatis的实现dao接口*.xml文件
+#  type-aliases-package: com.ppl.springboot.entity #实体类取别名
+  configuration:
+    ## 下划线转驼峰配置
+    map-underscore-to-camel-case: true
