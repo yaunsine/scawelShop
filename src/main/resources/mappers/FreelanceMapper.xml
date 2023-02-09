@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hiido.shop.scawelshop.mapper.FreelanceMapper">
+    <sql id="all_fields">
+        author,
+        link,
+        img_src,
+        description,
+        price,
+        score,
+        program_tech_id
+    </sql>
+    <insert id="batchSaveFreelance">
+        INSERT INTO `fiverr_freelance`(<include refid="all_fields"></include>) VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.author},#{item.link},#{item.imgSrc}, #{item.introduction}, #{item.price}, #{item.score}, #{item.programTechId})
+        </foreach>
+    </insert>
+</mapper>

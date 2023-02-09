@@ -4,7 +4,7 @@
     <logger name="org.apache.http.headers" level="ERROR" />
     
     <property name="log.name" value="scrapy"/>
-    <property name="log.path" value="E:/code/java/scawelShop/log"/>
+    <property name="log.path" value="log"/>
     <property name="CONSOLE_LOG_PATTERN"
               value="%date{yyyy-MM-dd HH:mm:ss}  %highlight(%-5level) %magenta(%-4relative) --- [%yellow(%30.30thread)] %cyan(%-40.40logger{39}) : %msg%n"/>
 
@@ -19,7 +19,7 @@
     <appender name="logFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/${log.name}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${log.path}/${log.name}.%d{yyyy-MM-dd HH}</fileNamePattern>
+            <fileNamePattern>${log.path}/${log.name}.%d{yyyy-MM-ddHH}</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>

@@ -39,6 +39,12 @@ public class ScawelShopApplication implements CommandLineRunner {
     @Resource
     private AsyncValidateAllLink asyncValidateAllLink;
 
+    @Resource
+    private FreelanceSiteProcessor freelanceSiteProcessor;
+
+    @Resource
+    private FiverrSiteProcessor fiverrSiteProcessor;
+
     public static void main(String[] args) {
 
         SpringApplication.run(ScawelShopApplication.class, args);
@@ -63,7 +69,9 @@ public class ScawelShopApplication implements CommandLineRunner {
         // productService.spiderHttpClient();
 
 //        cjSpiderRestAPIAdvertiserProcessor.start();
-         asyncValidateAllLink.batchAllLink();
+//          asyncValidateAllLink.batchAllLink();
 //         System.out.println("爬虫执行完毕.......");
+        freelanceSiteProcessor.batchRequests();
+//         fiverrSiteProcessor.seleniumStartBatch();
     }
 }

@@ -4,6 +4,7 @@ package com.hiido.shop.scawelshop.controller;
 import com.hiido.shop.scawelshop.model.ProductModel;
 import com.hiido.shop.scawelshop.service.IProductService;
 import com.hiido.shop.scawelshop.service.impl.AsyncValidateAllLink;
+import com.hiido.shop.scawelshop.service.impl.FiverrSiteProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,10 +28,20 @@ public class SpiderController {
     @Resource
     private AsyncValidateAllLink asyncValidateAllLink;
 
-    @GetMapping("/")
+    @Resource
+    private FiverrSiteProcessor fiverrSiteProcessor;
+
+    @GetMapping("/batchAllLink")
     @ResponseBody
     public String getProduct() {
         asyncValidateAllLink.batchAllLink();
+        return "{'code':200, 'msg': '执行完毕'}";
+    }
+
+    @GetMapping("/")
+    @ResponseBody
+    public String seleniumStart() {
+        fiverrSiteProcessor.seleniumStartBatch();
         return "{'code':200, 'msg': '执行完毕'}";
     }
 

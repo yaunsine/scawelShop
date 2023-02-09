@@ -35,7 +35,7 @@ import java.util.Map;
 @Configuration
 public class ValidateHttpClientDownloader extends HttpClientDownloader{
 
-    private Logger logger = LoggerFactory.getLogger(ValidateHttpClientDownloader.class);
+    private final Logger logger = LoggerFactory.getLogger(ValidateHttpClientDownloader.class);
 
     private HttpClientGenerator httpClientGenerator;
 
@@ -68,7 +68,7 @@ public class ValidateHttpClientDownloader extends HttpClientDownloader{
         this.proxyProvider = proxyProvider;
     }
 
-    private CloseableHttpClient getHttpClient(Site site) {
+    /*private CloseableHttpClient getHttpClient(Site site) {
         if (site == null) {
             return httpClientGenerator.getClient(null);
         }
@@ -84,9 +84,9 @@ public class ValidateHttpClientDownloader extends HttpClientDownloader{
             }
         }
         return httpClient;
-    }
+    }*/
 
-    public Page download(Request request, Task task) {
+    /*public Page download(Request request, Task task) {
         if (task != null && task.getSite() != null) {
             CloseableHttpResponse httpResponse = null;
             CloseableHttpClient httpClient = this.getHttpClient(task.getSite());
@@ -119,7 +119,7 @@ public class ValidateHttpClientDownloader extends HttpClientDownloader{
         } else {
             throw new NullPointerException("task or site can not be null");
         }
-    }
+    }*/
 
 
     @Override

@@ -69,65 +69,13 @@ public class MyHttpClientDownloader extends HttpClientDownloader{
         this.proxyProvider = proxyProvider;
     }
 
-    private CloseableHttpClient getHttpClient(Site site) {
-        if (site == null) {
-            return httpClientGenerator.getClient(null);
-        }
-        String domain = site.getDomain();
-        CloseableHttpClient httpClient = httpClients.get(domain);
-        if (httpClient == null) {
-            synchronized (this) {
-                httpClient = httpClients.get(domain);
-                if (httpClient == null) {
-                    httpClient = httpClientGenerator.getClient(site);
-                    httpClients.put(domain, httpClient);
-                }
-            }
-        }
-        return httpClient;
-    }
-
-    public Page download(Request request, Task task) {
-        if (task != null && task.getSite() != null) {
-            CloseableHttpResponse httpResponse = null;
-            CloseableHttpClient httpClient = this.getHttpClient(task.getSite());
-            Proxy proxy = this.proxyProvider != null ? this.proxyProvider.getProxy(task) : null;
-            HttpClientRequestContext requestContext = this.httpUriRequestConverter.convert(request, task.getSite(), proxy);
-            Page page = Page.fail();
-
-            Page var9;
-            try {
-                httpResponse = httpClient.execute(requestContext.getHttpUriRequest(), requestContext.getHttpClientContext());
-                page = this.handleResponse(request, request.getCharset() != null ? request.getCharset() : task.getSite().getCharset(), httpResponse, task);
-                this.onSuccess(request, task);
-                this.logger.info("downloading page success {}", request.getUrl());
-                Page var8 = page;
-                return var8;
-            } catch (IOException var13) {
-                this.onError(request, task, var13);
-                this.logger.info("download page {} error", request.getUrl(), var13);
-                var9 = page;
-            } finally {
-                if (httpResponse != null) {
-                    EntityUtils.consumeQuietly(httpResponse.getEntity());
-                }
-
-                if (this.proxyProvider != null && proxy != null) {
-                    this.proxyProvider.returnProxy(proxy, page, task);
-                }
-            }
-            return var9;
-        } else {
-            throw new NullPointerException("task or site can not be null");
-        }
-    }
 
 
     @Override
     protected Page handleResponse(Request request, String charset, HttpResponse httpResponse, Task task) throws IOException {
         Page page = super.handleResponse(request, charset, httpResponse, task);
         int code = page.getStatusCode();
-        logger.info("状态码响应为: {}", code);
+        logger.info("状态码响应为1: {}", code);
         return page;
     }
 

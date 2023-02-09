@@ -26,7 +26,7 @@ public class AsyncValidateAllLink {
     @Resource
     private ValidateAllLinkPageProcess validateAllLinkPageProcess;
 
-    @Value("${idd:271724461}")
+    @Value("${idd:294091567}")
     private int id;
 
     private final Logger logger = LoggerFactory.getLogger(AsyncValidateAllLink.class);
@@ -41,9 +41,7 @@ public class AsyncValidateAllLink {
             if (productModelList.size() != 0) {
                 try {
                     validateAllLinkPageProcess.start(productModelList);
-                } catch (UnknownHostException e) {
-                    throw new RuntimeException(e);
-                } catch (SocketTimeoutException e) {
+                } catch (UnknownHostException | SocketTimeoutException e) {
                     throw new RuntimeException(e);
                 }
             }

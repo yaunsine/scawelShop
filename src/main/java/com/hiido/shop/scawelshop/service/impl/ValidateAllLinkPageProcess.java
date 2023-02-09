@@ -96,7 +96,7 @@ public class ValidateAllLinkPageProcess implements PageProcessor, IValidateImage
 //                proxy
 //        ));
 
-        int threads = 5;
+        int threads = 100;
         Spider spider = Spider.create(this);
         for (ProductModel productModel: productList) {
             id = productModel.getId();

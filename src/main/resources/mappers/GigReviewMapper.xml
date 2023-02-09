@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hiido.shop.scawelshop.mapper.GigReviewMapper">
+    <sql id="all_fields">
+        url,
+img_src,
+username,
+country_name,
+rating_score,
+`time`,
+            website_type,
+platform_tool,
+freelance_id,
+            score,
+            website_feature
+    </sql>
+    <insert id="batchSaveGigReview">
+        INSERT INTO `fiverr_gig_review`(<include refid="all_fields"></include>) VALUES
+        <foreach collection="list" separator="," item="item">
+            (#{item.url},#{item.imgSrc},#{item.username}, #{item.countryName}, #{item.ratingScore}, #{item.time},
+            #{item.websiteType}, #{item.platFormAndTool}, #{item.freelanceId},
+            #{item.score}, #{item.websiteFeature})
+        </foreach>
+    </insert>
+</mapper>
