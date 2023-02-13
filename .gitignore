@@ -36,3 +36,5 @@ build/
 ### log ###
 /log
 /log20230118
+hs_err_pid39132.log
+replay_pid39132.log
