@@ -38,3 +38,6 @@ build/
 /log20230118
 hs_err_pid39132.log
 replay_pid39132.log
+
+### template File ###
+git_commit_template.txt
