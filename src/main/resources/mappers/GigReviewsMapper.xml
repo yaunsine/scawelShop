@@ -15,7 +15,7 @@ seller_score
     
     </sql>
     <insert id="batchSaveGigReviews" parameterType="com.hiido.shop.scawelshop.po.GigReviewPo">
-        INSERT INTO `fiverr_gig_reviews`(<include refid="all_fields"></include>) VALUES
+        INSERT INTO `fiverr_gig_reviews_v2`(<include refid="all_fields"></include>) VALUES
             (
              #{sellerFrom},#{sellerRatingCount}, #{reviewsCount},
              #{reviewsCountryName}, #{gigDescription},

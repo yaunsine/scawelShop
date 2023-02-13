@@ -17,11 +17,11 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class AsyncConfiguration {
     private int corePoolSize = Runtime.getRuntime().availableProcessors() - 1;
 
-    private int myCorePoolSize = 20;
+    private int myCorePoolSize = 5;
 
-    private int myMaxPoolSize = 40;
+    private int myMaxPoolSize = 6;
 
-    private int myQueueCapacity = 60;
+    private int myQueueCapacity = 6;
 
     @Bean("threadValidateAllLink")
     public Executor doSomethingImage() {
@@ -36,7 +36,7 @@ public class AsyncConfiguration {
         // 子线程名前缀
         executor.setThreadNamePrefix("1threadValidateAllLink-");
         // 拒绝策略启动主线程处理
-        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
         // 设置任务完成关闭线程
         executor.setWaitForTasksToCompleteOnShutdown(true);
         executor.initialize();

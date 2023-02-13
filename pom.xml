@@ -17,9 +17,30 @@
         <java.version>17</java.version>
         <spring.version>2.7.5</spring.version>
         <selenium.version>4.0.0</selenium.version>
+        <swagger.version>2.9.2</swagger.version>
     </properties>
     <packaging>jar</packaging>
     <dependencies>
+        <!-- swagger-ui -->
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+    
+        <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/swagger-bootstrap-ui -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+    
     
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

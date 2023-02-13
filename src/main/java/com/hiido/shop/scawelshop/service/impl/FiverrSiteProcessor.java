@@ -64,6 +64,9 @@ public class FiverrSiteProcessor implements PageProcessor {
     @Resource
     private ProgramTechMapper programTechMapper;
 
+    /**
+     * 爬取所有Gig详情页
+     */
     public void seleniumStartBatch() {
         List<ProgramTechPo> programTechPos = programTechMapper.listProgramTechs();
         for (ProgramTechPo programTechPo: programTechPos) {

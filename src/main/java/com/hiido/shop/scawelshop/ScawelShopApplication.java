@@ -45,6 +45,9 @@ public class ScawelShopApplication implements CommandLineRunner {
     @Resource
     private FiverrSiteProcessor fiverrSiteProcessor;
 
+    @Resource
+    private AsyncSpiderFiverr asyncSpiderFiverr;
+
     public static void main(String[] args) {
 
         SpringApplication.run(ScawelShopApplication.class, args);
@@ -73,5 +76,6 @@ public class ScawelShopApplication implements CommandLineRunner {
 //         System.out.println("爬虫执行完毕.......");
         freelanceSiteProcessor.batchRequests();
 //         fiverrSiteProcessor.seleniumStartBatch();
+//         asyncSpiderFiverr.batchRequestsAsync();
     }
 }
