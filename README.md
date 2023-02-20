@@ -1,4 +1,8 @@
 # scawelShop
+![作者](https://img.shields.io/badge/Author-yaunsine-orange.svg)
+![爬虫框架](https://img.shields.io/badge/技术栈-Springboot+webmagic-red.svg)
+![存储](https://img.shields.io/badge/存储-MySQL+Excel-green.svg)
+
 爬虫项目
 
 :construction_worker:拉跨的爬虫项目
