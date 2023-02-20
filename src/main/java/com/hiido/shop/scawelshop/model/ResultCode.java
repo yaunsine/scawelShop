@@ -17,7 +17,7 @@ public class ResultCode<T> {
     /**
      * 状态码
      */
-    @ApiModelProperty("状态码")
+    @ApiModelProperty(value = "状态码", example = "200")
     private int code;
     /**
      * 响应信息

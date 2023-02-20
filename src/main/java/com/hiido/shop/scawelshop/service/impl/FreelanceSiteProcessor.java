@@ -68,6 +68,9 @@ public class FreelanceSiteProcessor {
                 // if (developerPo.getId() <= 911 || developerPo.getId() >= 934) {
                 //     continue;
                 // }
+                if (developerPo.getId() <= 1055) {
+                    continue;
+                }
                 seleniumStart(developerPo.getId(), developerPo.getLink());
             }
         }

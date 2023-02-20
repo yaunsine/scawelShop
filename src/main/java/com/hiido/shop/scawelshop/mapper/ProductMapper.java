@@ -19,6 +19,22 @@ import java.util.List;
 @Repository
 public interface ProductMapper {
 
+    @Select("select count(*) from product_list_new_v4")
+    int getProductCount();
+
+    @Select("select *\n" +
+            "from\n" +
+            "product_list_new_v4 a,\n" +
+            "(\n" +
+            "select id\n" +
+            "from\n" +
+            "product_list_new_v4\n" +
+            "limit ${offset}, ${limit}\n" +
+            ") b \n" +
+            "where\n" +
+            "a.id = b.id")
+    List<ProductModel> listProductPagination(@Param("limit") int limit, @Param("offset") int offset);
+
     /**
      * TODO: 设置is_link_valid为0，表示产品链接为非404
      * @param id: 产品编号

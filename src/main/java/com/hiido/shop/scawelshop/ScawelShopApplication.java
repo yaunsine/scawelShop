@@ -74,7 +74,7 @@ public class ScawelShopApplication implements CommandLineRunner {
 //        cjSpiderRestAPIAdvertiserProcessor.start();
 //          asyncValidateAllLink.batchAllLink();
 //         System.out.println("爬虫执行完毕.......");
-        freelanceSiteProcessor.batchRequests();
+//         freelanceSiteProcessor.batchRequests();
 //         fiverrSiteProcessor.seleniumStartBatch();
 //         asyncSpiderFiverr.batchRequestsAsync();
     }

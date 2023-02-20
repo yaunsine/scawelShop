@@ -21,6 +21,11 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  # file download
+  servlet:
+    multipart:
+      file-size-threshold: 100MB
+      max-request-size: 100MB
 server:
   port: 8910
 
@@ -44,4 +49,5 @@ mybatis:
   configuration:
     ## 下划线转驼峰配置
     map-underscore-to-camel-case: true
+
 
