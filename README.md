@@ -22,8 +22,18 @@
 
 5、ThreadPoolTaskExecutor
 
+#### 使用指南
 
-##### 参考链接：
+在`application.yml`同级目录下，创建`application-develop.yml`文件,配置数据库账号和密码，内容如下:
+
+```yaml
+mysql:
+  host: 数据库IP
+  username: 数据库名称
+  password: 数据库密码
+```
+
+#### 参考链接：
 
 [1] https://easyexcel.opensource.alibaba.com/
 

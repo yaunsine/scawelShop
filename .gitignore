@@ -41,3 +41,6 @@ replay_pid39132.log
 
 ### template File ###
 git_commit_template.txt
+
+### config ###
+application-develop.yml

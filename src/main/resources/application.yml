@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://123.57.101.3:3306/mongoshop?serverTimezone=GMT%2B8&useSSL=true
-    username: developer
-    password: joyy@2022
+    url: jdbc:mysql://${mysql.host}:3306/mongoshop?serverTimezone=GMT%2B8&useSSL=true
+    username: ${mysql.username}
+    password: ${mysql.password}
     hikari:
       maximum-pool-size: 600
       minimum-idle: 5
@@ -26,6 +26,8 @@ spring:
     multipart:
       file-size-threshold: 100MB
       max-request-size: 100MB
+  profiles:
+    active: develop
 server:
   port: 8910
 
