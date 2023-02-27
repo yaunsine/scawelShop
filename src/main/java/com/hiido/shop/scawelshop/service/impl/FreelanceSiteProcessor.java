@@ -68,7 +68,7 @@ public class FreelanceSiteProcessor {
                 // if (developerPo.getId() <= 911 || developerPo.getId() >= 934) {
                 //     continue;
                 // }
-                if (developerPo.getId() <= 1055) {
+                if (developerPo.getId() <= 1152) {
                     continue;
                 }
                 seleniumStart(developerPo.getId(), developerPo.getLink());
@@ -132,7 +132,8 @@ public class FreelanceSiteProcessor {
         // 以最高权限运行
         options.addArguments("--headless=new");
         options.addArguments("--ignore-certificate-errors");
-        // options.addArguments("blink-settings=imagesEnabled=false");
+        // options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
+        options.addArguments("blink-settings=imagesEnabled=false");
         // 禁止加载图片,不加载图片，详情页图片获取不到
         // options.addArguments("excludeSwitches", ["enable-automation"]);  // 关闭 “Chrome 正受到自动测试软件的控制。”
 
@@ -153,18 +154,18 @@ public class FreelanceSiteProcessor {
         optionsSpicify(options);
         ChromeDriver driver = new ChromeDriver(options);
 
-        Map<String, Object> command = new HashMap<>();
-        command.put("source", "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
-        driver.executeCdpCommand("Page.addScriptToEvaluateOnNewDocument", command);
-        driver.executeScript("");
+        // Map<String, Object> command = new HashMap<>();
+        // command.put("source", "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})");
+        // driver.executeCdpCommand("Page.addScriptToEvaluateOnNewDocument", command);
+        // driver.executeScript("");
         // String url = "https://www.fiverr.com/samratpro/create-ai-writing-automation-script-blog-with-openai-gpt3?context_referrer=subcategory_listing&ref_ctx_id=133ea6860f0c44700d02b008774cbde5&pckg_id=1&pos=4&context_type=rating&funnel=133ea6860f0c44700d02b008774cbde5&imp_id=cf74aaa2-ede6-437c-b952-eac92a3286db";
-        driver.manage().window().maximize();
+        // driver.manage().window().maximize();
 
         int seeMore = 5;
         try{
             Thread.sleep(2000);
             driver.get(link);
-            Thread.sleep((12-(int)(Math.random()*10)) * 1000);
+            // Thread.sleep((12-(int)(Math.random()*10)) * 1000);
             dialogDeal(driver, seeMore);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -215,8 +216,8 @@ public class FreelanceSiteProcessor {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        driver.close();
-        driver.quit();
+        // driver.close();
+        // driver.quit();
     }
 
     /**

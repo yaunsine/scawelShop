@@ -31,6 +31,10 @@ mysql:
   host: 数据库IP
   username: 数据库名称
   password: 数据库密码
+
+instagram:
+  username: ins账号
+  password: ins密码
 ```
 
 #### 参考链接：
