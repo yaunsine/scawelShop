@@ -1,0 +1,331 @@
+卷 软件 的文件夹 PATH 列表
+卷序列号为 D817-1634
+E:.
+|   .gitignore
+|   git_commit_template.txt
+|   HELP.md
+|   hs_err_pid39132.log
+|   mvnw
+|   mvnw.cmd
+|   pom.xml
+|   project_tree_banner.txt
+|   README.md
+|   replay_pid39132.log
+|   
++---.idea
+|   |   .gitignore
+|   |   ApifoxUploaderProjectSetting.xml
+|   |   compiler.xml
+|   |   encodings.xml
+|   |   jarRepositories.xml
+|   |   misc.xml
+|   |   uiDesigner.xml
+|   |   vcs.xml
+|   |   workspace.xml
+|   |   
+|   +---.cache
+|   |   \---.apifox_helper
+|   |           .url.cache.v2.1.db
+|   |           
+|   \---codeStyles
+|           codeStyleConfig.xml
+|           
++---.mvn
+|   \---wrapper
+|           maven-wrapper.jar
+|           maven-wrapper.properties
+|           
++---crx
+|       shadowOpen.crx
+|       
++---sql
+|       affiliate_cj_advertiser.sql
+|       affiliate_cj_shop_product.sql
+|       affiliate_cj_shop_product_old.sql
+|       fiverr_freelance.sql
+|       fiverr_gig_reviews.sql
+|       fiverr_gig_reviews_old.sql
+|       fiverr_gig_reviews_v2.sql
+|       fiverr_program_tech.sql
+|       product_list_new_v4.sql
+|       
++---src
+|   +---main
+|   |   +---java
+|   |   |   \---com
+|   |   |       \---hiido
+|   |   |           \---shop
+|   |   |               \---scawelshop
+|   |   |                   |   ScawelShopApplication.java
+|   |   |                   |   
+|   |   |                   +---bo
+|   |   |                   |       AdvertiseBO.java
+|   |   |                   |       AdvertiserBO.java
+|   |   |                   |       
+|   |   |                   +---config
+|   |   |                   |       AsyncConfiguration.java
+|   |   |                   |       CloseableHttpClientConfiguration.java
+|   |   |                   |       MyConsolePipline.java
+|   |   |                   |       MyHttpClientDownloader.java
+|   |   |                   |       MyProxyConfiguration.java
+|   |   |                   |       RequestConfiguration.java
+|   |   |                   |       SwaggerConfiguration.java
+|   |   |                   |       ValidateHttpClientDownloader.java
+|   |   |                   |       WebMvcConfiguration.java
+|   |   |                   |       
+|   |   |                   +---constant
+|   |   |                   |       ConfigConstants.java
+|   |   |                   |       FileSuffixConstants.java
+|   |   |                   |       HttpStatus.java
+|   |   |                   |       StatusCodeEnum.java
+|   |   |                   |       
+|   |   |                   +---controller
+|   |   |                   |       BingSearchSpiderController.java
+|   |   |                   |       FiverrSpiderController.java
+|   |   |                   |       ProductPageController.java
+|   |   |                   |       SpiderController.java
+|   |   |                   |       
+|   |   |                   +---mapper
+|   |   |                   |       AdvertiserMapper.java
+|   |   |                   |       FreelanceMapper.java
+|   |   |                   |       GigReviewMapper.java
+|   |   |                   |       GigReviewsMapper.java
+|   |   |                   |       ProductMapper.java
+|   |   |                   |       ProgramTechMapper.java
+|   |   |                   |       ShoppingProductMapper.java
+|   |   |                   |       
+|   |   |                   +---model
+|   |   |                   |       ActionNode.java
+|   |   |                   |       ProductModel.java
+|   |   |                   |       ResultCode.java
+|   |   |                   |       SearchResult.java
+|   |   |                   |       
+|   |   |                   +---po
+|   |   |                   |       DeveloperPo.java
+|   |   |                   |       GigReviewPo.java
+|   |   |                   |       ProgramTechPo.java
+|   |   |                   |       ReviewPo.java
+|   |   |                   |       ShoppingProductPO.java
+|   |   |                   |       
+|   |   |                   +---service
+|   |   |                   |   |   IProductService.java
+|   |   |                   |   |   IValidateImage.java
+|   |   |                   |   |   
+|   |   |                   |   +---impl
+|   |   |                   |   |       AdvertiserServiceImpl.java
+|   |   |                   |   |       AsyncRunSpider.java
+|   |   |                   |   |       AsyncSpiderFiverr.java
+|   |   |                   |   |       AsyncValidateAllLink.java
+|   |   |                   |   |       CjSpiderGraphQLAdvertiserProcessor.java
+|   |   |                   |   |       CjSpiderGraphQLProcessor.java
+|   |   |                   |   |       CjSpiderGraphqlProductProcessor.java
+|   |   |                   |   |       CjSpiderPageProcessor.java
+|   |   |                   |   |       CjSpiderRestApiAdvertiserProcessor.java
+|   |   |                   |   |       FiverrSiteProcessor.java
+|   |   |                   |   |       FreelanceSiteProcessor.java
+|   |   |                   |   |       HttpClientService.java
+|   |   |                   |   |       ProductServiceImpl.java
+|   |   |                   |   |       TwitchDownload.java
+|   |   |                   |   |       ValidateAllLinkPageProcess.java
+|   |   |                   |   |       ValidateImagePageProcess.java
+|   |   |                   |   |       ValidateLinkPageProcess.java
+|   |   |                   |   |       
+|   |   |                   |   +---pipeline
+|   |   |                   |   |       AdvertiserPipeline.java
+|   |   |                   |   |       
+|   |   |                   |   \---processor
+|   |   |                   |           BingPageProcessor.java
+|   |   |                   |           InstagramProcessor.java
+|   |   |                   |           
+|   |   |                   \---util
+|   |   |                           BasePageQuery.java
+|   |   |                           DecimalNumberConvertUtils.java
+|   |   |                           PageMakerUtils.java
+|   |   |                           PaginationDataView.java
+|   |   |                           PaginationUtils.java
+|   |   |                           PojoCopyUtils.java
+|   |   |                           ResultCodeUtil.java
+|   |   |                           
+|   |   \---resources
+|   |       |   application-develop.yml
+|   |       |   application.properties
+|   |       |   application.yml
+|   |       |   log4j.properties
+|   |       |   logback.properties
+|   |       |   logback.xml
+|   |       |   
+|   |       +---mappers
+|   |       |       AdvertiserMapper.xml
+|   |       |       FreelanceMapper.xml
+|   |       |       GigReviewMapper.xml
+|   |       |       GigReviewsMapper.xml
+|   |       |       ShoppingProductMapper.xml
+|   |       |       
+|   |       +---static
+|   |       \---templates
+|   \---test
+|       \---java
+|           \---com
+|               \---hiido
+|                   \---shop
+|                       \---scawelshop
+|                               ATests.java
+|                               EnumTests.java
+|                               IteratorTest.java
+|                               ScawelShopApplicationTests.java
+|                               StringTests.java
+|                               ThreadTests.java
+|                               TTests.java
+|                               
+\---target
+    |   scawelShop-0.0.1-SNAPSHOT.jar
+    |   scawelShop-0.0.1-SNAPSHOT.jar.original
+    |   
+    +---classes
+    |   |   application-develop.yml
+    |   |   application.properties
+    |   |   application.yml
+    |   |   log4j.properties
+    |   |   logback.properties
+    |   |   logback.xml
+    |   |   
+    |   +---com
+    |   |   \---hiido
+    |   |       \---shop
+    |   |           \---scawelshop
+    |   |               |   ScawelShopApplication.class
+    |   |               |   
+    |   |               +---bo
+    |   |               |       AdvertiseBO.class
+    |   |               |       AdvertiserBO.class
+    |   |               |       
+    |   |               +---config
+    |   |               |       AsyncConfiguration.class
+    |   |               |       CloseableHttpClientConfiguration.class
+    |   |               |       MyConsolePipline.class
+    |   |               |       MyHttpClientDownloader.class
+    |   |               |       MyProxyConfiguration.class
+    |   |               |       RequestConfiguration.class
+    |   |               |       SwaggerConfiguration.class
+    |   |               |       ValidateHttpClientDownloader.class
+    |   |               |       WebMvcConfiguration.class
+    |   |               |       
+    |   |               +---constant
+    |   |               |       ConfigConstants.class
+    |   |               |       FileSuffixConstants.class
+    |   |               |       HttpStatus.class
+    |   |               |       StatusCodeEnum.class
+    |   |               |       
+    |   |               +---controller
+    |   |               |       BingSearchSpiderController.class
+    |   |               |       FiverrSpiderController.class
+    |   |               |       ProductPageController.class
+    |   |               |       SpiderController.class
+    |   |               |       
+    |   |               +---mapper
+    |   |               |       AdvertiserMapper.class
+    |   |               |       FreelanceMapper.class
+    |   |               |       GigReviewMapper.class
+    |   |               |       GigReviewsMapper.class
+    |   |               |       ProductMapper.class
+    |   |               |       ProgramTechMapper.class
+    |   |               |       ShoppingProductMapper.class
+    |   |               |       
+    |   |               +---model
+    |   |               |       ActionNode.class
+    |   |               |       ProductModel.class
+    |   |               |       ResultCode.class
+    |   |               |       SearchResult.class
+    |   |               |       
+    |   |               +---po
+    |   |               |       DeveloperPo.class
+    |   |               |       GigReviewPo.class
+    |   |               |       ProgramTechPo.class
+    |   |               |       ReviewPo.class
+    |   |               |       ShoppingProductPO.class
+    |   |               |       
+    |   |               +---service
+    |   |               |   |   IProductService.class
+    |   |               |   |   IValidateImage.class
+    |   |               |   |   
+    |   |               |   +---impl
+    |   |               |   |       AdvertiserServiceImpl.class
+    |   |               |   |       AsyncRunSpider.class
+    |   |               |   |       AsyncSpiderFiverr.class
+    |   |               |   |       AsyncValidateAllLink.class
+    |   |               |   |       CjSpiderGraphQLAdvertiserProcessor.class
+    |   |               |   |       CjSpiderGraphQLProcessor.class
+    |   |               |   |       CjSpiderGraphqlProductProcessor.class
+    |   |               |   |       CjSpiderPageProcessor.class
+    |   |               |   |       CjSpiderRestApiAdvertiserProcessor.class
+    |   |               |   |       FiverrSiteProcessor.class
+    |   |               |   |       FreelanceSiteProcessor.class
+    |   |               |   |       HttpClientService.class
+    |   |               |   |       ProductServiceImpl.class
+    |   |               |   |       TwitchDownload.class
+    |   |               |   |       ValidateAllLinkPageProcess.class
+    |   |               |   |       ValidateImagePageProcess.class
+    |   |               |   |       ValidateLinkPageProcess.class
+    |   |               |   |       
+    |   |               |   +---pipeline
+    |   |               |   |       AdvertiserPipeline.class
+    |   |               |   |       
+    |   |               |   \---processor
+    |   |               |           BingPageProcessor.class
+    |   |               |           InstagramProcessor.class
+    |   |               |           
+    |   |               \---util
+    |   |                       BasePageQuery.class
+    |   |                       DecimalNumberConvertUtils.class
+    |   |                       PageMakerUtils.class
+    |   |                       PaginationDataView.class
+    |   |                       PaginationUtils.class
+    |   |                       PojoCopyUtils.class
+    |   |                       ResultCodeUtil.class
+    |   |                       
+    |   \---mappers
+    |           AdvertiserMapper.xml
+    |           FreelanceMapper.xml
+    |           GigReviewMapper.xml
+    |           GigReviewsMapper.xml
+    |           ShoppingProductMapper.xml
+    |           
+    +---generated-sources
+    |   \---annotations
+    +---generated-test-sources
+    |   \---test-annotations
+    +---maven-archiver
+    |       pom.properties
+    |       
+    +---maven-status
+    |   \---maven-compiler-plugin
+    |       +---compile
+    |       |   \---default-compile
+    |       |           createdFiles.lst
+    |       |           inputFiles.lst
+    |       |           
+    |       \---testCompile
+    |           \---default-testCompile
+    |                   createdFiles.lst
+    |                   inputFiles.lst
+    |                   
+    +---surefire-reports
+    |       com.hiido.shop.scawelshop.ScawelShopApplicationTests.txt
+    |       TEST-com.hiido.shop.scawelshop.ScawelShopApplicationTests.xml
+    |       
+    \---test-classes
+        \---com
+            \---hiido
+                \---shop
+                    \---scawelshop
+                            EnumTests.class
+                            IteratorTest.class
+                            ScawelShopApplicationTests.class
+                            StringTests.class
+                            ThreadTests$1.class
+                            ThreadTests$2.class
+                            ThreadTests$3.class
+                            ThreadTests$4.class
+                            ThreadTests.class
+                            TTests.class
+                            
