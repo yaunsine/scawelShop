@@ -10,7 +10,10 @@
 :poop:基于Webmagic和多线程 
 
 
-#### :pencil:技术栈:
+[> 项目目录结构](project_tree_banner.txt)
+
+
+#### 技术栈
 
 1、SpringBoot
 
@@ -35,6 +38,17 @@ mysql:
 instagram:
   username: ins账号
   password: ins密码
+```
+
+若需要使用打开的`chrome.exe`，代替`chromedriver.exe`，可以配置`ChromeOptions`：
+```
+ChromeOptions options = new ChromeOptions();
+options.setExperimentalOption("debuggerAddress", "127.0.0.1:9222");
+```
+
+并且在控制台打开
+```shell
+chrome.exe --remote-debugging-port=9222
 ```
 
 #### 参考链接：
