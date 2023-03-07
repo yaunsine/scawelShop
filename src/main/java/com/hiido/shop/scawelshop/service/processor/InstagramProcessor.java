@@ -10,6 +10,8 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.processor.PageProcessor;
 
+
+@Service
 public class InstagramProcessor {
 
     @Value("${instagram.username}")
