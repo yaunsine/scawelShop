@@ -70,9 +70,7 @@ public class ScawelShopApplication implements CommandLineRunner {
                 "       \\/       \\/    \\/      \\/     \\//_____/         \\/ ");
         // productService.getList();
         // productService.spiderHttpClient();
-
-//        cjSpiderRestAPIAdvertiserProcessor.start();
-//          asyncValidateAllLink.batchAllLink();
+	logger.info("爬虫执行完毕.......");
 //         System.out.println("爬虫执行完毕.......");
         freelanceSiteProcessor.batchRequests();
 //         fiverrSiteProcessor.seleniumStartBatch();
