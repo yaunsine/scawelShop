@@ -26,7 +26,7 @@ public class AdvertiserServiceImpl {
      */
     boolean saveBatchNative(List<AdvertiserBO> advertiserBOList) {
         boolean flag = false;
-        flag = advertiserMapper.saveBatchByNative(advertiserBOList);
-        return flag;
+
+        return advertiserMapper.saveBatchByNative(advertiserBOList);
     }
 }

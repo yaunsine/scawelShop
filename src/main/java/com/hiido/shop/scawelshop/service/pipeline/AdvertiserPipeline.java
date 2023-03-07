@@ -12,6 +12,6 @@ public class AdvertiserPipeline implements PageModelPipeline<AdvertiserBO> {
 
     @Override
     public void process(AdvertiserBO advertiserBO, Task task) {
-
+        if (advertiserBO == null) {}
     }
 }
